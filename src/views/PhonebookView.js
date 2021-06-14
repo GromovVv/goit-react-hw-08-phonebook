@@ -35,7 +35,7 @@ export default function App() {
       <ContactForm />
       <div style={styles.section}>
         <h2 style={styles.title}>Contacts :</h2>
-        <p style={styles.text}>Total numbers: {totalContactsCount}</p>
+        <p style={styles.text}>Total contacts: {totalContactsCount}</p>
         <Filter />
         <ContactList />
       </div>
