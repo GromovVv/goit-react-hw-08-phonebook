@@ -14,7 +14,7 @@ import {
 } from './phonebook-actions';
 
 const items = createReducer([], {
-  [fetchContactSuccess]: (state, { payload }) => payload,
+  [fetchContactSuccess]: (_, { payload }) => payload,
   [addContactSuccess]: (state, { payload }) => [...state, payload],
   [deleteContactSuccess]: (state, { payload }) =>
     state.filter(({ id }) => id !== payload),
@@ -33,16 +33,16 @@ const loading = createReducer(false, {
 });
 
 const filter = createReducer('', {
-  [changeFilter]: (state, { payload }) => payload,
+  [changeFilter]: (_, { payload }) => payload,
 });
 
 const error = createReducer(null, {
-  [fetchContactError]: (state, action) => action.payload,
+  [fetchContactError]: (_, action) => action.payload,
   [fetchContactRequest]: () => null,
   [addContactRequest]: () => null,
   [deleteContactRequest]: () => null,
-  [deleteContactError]: (state, action) => action.payload,
-  [addContactError]: (state, action) => action.payload,
+  [deleteContactError]: (_, action) => action.payload,
+  [addContactError]: (_, action) => action.payload,
 });
 
 export default combineReducers({

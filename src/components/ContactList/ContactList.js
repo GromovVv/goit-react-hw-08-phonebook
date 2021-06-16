@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import * as operations from '../../redux/phonebook-operations';
 import { getVisibleContacts } from '../../redux/phonebook-selectors';
@@ -8,6 +8,11 @@ function ContactList() {
   const contacts = useSelector(getVisibleContacts);
   const dispatch = useDispatch();
   const onDeleteContact = id => dispatch(operations.deleteContact(id));
+
+  useEffect(() => {
+    dispatch(operations.fetchContacts());
+  }, [dispatch]);
+
 
   return (
     <ul className={styles.list}>
