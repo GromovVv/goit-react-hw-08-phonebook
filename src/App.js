@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { authOperations, authSelectors } from './redux/auth';
-import { Switch } from 'react-router-dom';
+import { Switch, Redirect } from 'react-router-dom';
 
 import AppBar from './components/AppBar';
 import Container from './components/Container';
@@ -44,6 +44,8 @@ export default function App() {
             <PrivatRoute>
               <PhonebookView path="/contacts" />
             </PrivatRoute>
+
+            <Redirect to="/" />
           </Switch>
         </Container>
       </>
