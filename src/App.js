@@ -45,7 +45,7 @@ export default function App() {
               <PhonebookView path="/contacts" />
             </PrivatRoute>
 
-            {/* <Redirect to="/" /> */}
+            <Redirect to="/" />
           </Switch>
         </Container>
       </>
